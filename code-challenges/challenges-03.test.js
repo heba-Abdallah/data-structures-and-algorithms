@@ -5,21 +5,25 @@ CHALLENGE 1 - Review
 
 Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array.
 
+
 describe('Testing challenge 1', () => {
   test('It should add two to every value', () => {
     expect(addTwo([1, 2, 4])).toStrictEqual([3, 4, 6]);
   });
 });
+
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
   // Solution code here...
+
   let newArr=[];
   for (let i = 0; i < arr.length; i++) {
     newArr.push(arr[i]+2);
     
   }
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,6 +33,7 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
+
 describe('Testing challenge 2', () => {
   test('It should return an array containing only numbers', () => {
     expect(typeNum([1, 'bob', 3])).toStrictEqual([1, 3]);
@@ -37,16 +42,19 @@ describe('Testing challenge 2', () => {
     expect(typeNum([2, 3, 5])).toStrictEqual([2, 3, 5]);
   });
 });
+
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
   // Solution code here...
+
   let newArr=arr.filter((n) =>{
     if(typeof(n)==='number')
     return n
   })
   
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +64,7 @@ Write a function named containsAnd that, given an array of strings as input, use
 
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
+
 describe('Testing challenge 3', () => {
   test('It should return an array of strings containing the word and', () => {
     expect(containsAnd(['panda', 'ran', 'and'])).toStrictEqual(['panda', 'and']);
@@ -64,15 +73,18 @@ describe('Testing challenge 3', () => {
     expect(containsAnd(['and', 'sand'])).toStrictEqual(['and', 'sand']);
   });
 });
+
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
   // Solution code here...
+
   let newArr=arr.filter((n) =>{
     if(n.includes('and')===true)
     return n
   })
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +94,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 
 For example, oddValues([1,2,3]) returns [1,3].
 
+
 describe('Testing challenge 4', () => {
   test('It should return an array containing only odd integers', () => {
     expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 3, 5, 7, 9]);
@@ -90,14 +103,17 @@ describe('Testing challenge 4', () => {
     expect(oddValues([2,4,6,8])).toStrictEqual([]);
   });
 });
+
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
   // Solution code here...
+
   let newArr=arr.filter((n) =>{
     return (n%2);
   })
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,6 +122,7 @@ CHALLENGE 5
 Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
+
 
 describe('Testing challenge 5', () => {
   const firstNums = [1, 2, 3];
@@ -130,15 +147,18 @@ describe('Testing challenge 5', () => {
     expect(notInFirstArray([1,2,3,4,5], [])).toStrictEqual([]);
   });
 });
+
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+
  let newArr= arr.filter((n)=>{
    if(!forbiddenValues.includes(n))
    return n;
  })
  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
