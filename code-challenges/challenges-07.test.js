@@ -33,7 +33,12 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-}
+    starWarsArr.sort((c1, c2) => {
+      return parseInt(c2['height']) - parseInt(c1['height']);
+    });
+    return starWarsArr;
+  
+  }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -98,10 +103,11 @@ describe('Testing challenge 4', () => {
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+      result.push(str.slice(i));
+  }
   return result;
 };
-
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -178,6 +184,9 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(elemnt=>{
+    result.push(elemnt.split(' ').slice(2).join(' '));
+  })
   return result;
 };
 
@@ -298,7 +307,7 @@ Run your tests from the console: jest challenges-05.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
     expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
@@ -317,7 +326,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of shortening words', () => {
     expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
     expect(howMuchPencil('Welcome').length).toStrictEqual(8);
